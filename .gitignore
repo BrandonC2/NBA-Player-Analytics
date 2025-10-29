@@ -1,0 +1,13 @@
+.env
+
+.env.example
+
+*.txt
+
+*.csv
+
+/data
+
+/.dashboard_cache
+
+/src/__pycache__
