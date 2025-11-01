@@ -6,5 +6,20 @@
 3) Run a quick test:
 
 
-```bash
-python -m src.fetch_data --date 2025-10-26 --season 2025-26 --save 1
+
+# Pull latest PrizePicks lines
+python -m src.prizepicks_connector --league NBA --out data/prizepicks_live.csv
+
+# Build the live probability + EV board
+python -m src.build_board_all \
+  --date $(date +%Y-%m-%d) \
+  --season 2025-26 \
+  --use_prizepicks 1 \
+  --merge_mode replace \
+  --out board.csv
+
+# Generate top Flex/Power combinations
+python -m src.build_entries --board board.csv --entry_type flex5 --min_p 0.58 --max_candidates 40 --top_n 100 --out entries_flex5.csv
+
+# Streamlit Dashboard
+streamlit run src/dashboard.py

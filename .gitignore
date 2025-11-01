@@ -3,6 +3,7 @@
 .env.example
 
 *.txt
+!requirements.txt
 
 *.csv
 

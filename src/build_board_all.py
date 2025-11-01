@@ -7,17 +7,12 @@ Build a daily board with:
 - P(Over), P(Under)
 - EV-like scores for Flex3/Flex5/Flex6 (identical-prob approximation for ranking)
 
-Typical:
-  python -m src.build_board_all \
-    --date 2025-10-27 \
-    --season 2025-26 \
-    --season_type "Regular Season" \
-    --look_back 10 \
-    --in_csv data/prizepicks_lines.csv \
-    --use_prizepicks 1 \
-    --merge_mode replace \
-    --out board.csv \
-    --debug 1
+python -m src.build_board_all \
+  --date $(date +%Y-%m-%d) \
+  --season 2025-26 \
+  --use_prizepicks 1 \
+  --merge_mode replace \
+  --out board.csv
 """
 
 import argparse

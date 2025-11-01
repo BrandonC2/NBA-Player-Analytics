@@ -239,7 +239,7 @@ if not st.session_state["live_df"].empty:
 # ---------------------------
 st.subheader("2) Build Daily Board")
 
-# NEW: allow forcing board build from cached live lines
+# allow forcing board build from cached live lines
 use_cached_live_for_board = st.checkbox(
     "Use cached live lines for board build (skip fresh fetch inside build_board)",
     value=True if not st.session_state["live_df"].empty else False,
