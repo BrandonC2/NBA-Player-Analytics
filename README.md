@@ -1,7 +1,13 @@
-# PickPrizes — Foundation
+# PickPrizes
+
+## Purpose:
+This program gathers NBA player data as well as OVER/UNDER options from PrizePicks
+to provide the best lineup (flex or power) based on EV.
 
 
-1) Create a `.env` from `.env.example` and set `THE_ODDS_API_KEY`.
+
+
+1) Create a `.env` and set `THE_ODDS_API_KEY`.
 2) `pip install -r requirements.txt`
 3) Run a quick test:
 
